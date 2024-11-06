@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        /* CSS */
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 1em;
+            background-color: #1c1c1c;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        #menu-toggle {
+            font-size: 1.5em;
+            background: none;
+            border: none;
+            color: #ffffff;
+            cursor: pointer;
+            margin-right: 1em;
+        }
+
+        #menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #menu ul li {
+            margin: 1em 0;
+        }
+
+        #menu ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 1.2em;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Styling main content */
+        main {
+            margin-top: 6em;
+            padding: 1em;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 0.5em;
+        }
+
+        .highlight {
+            color: #00FF00; /* Green color for "Coder" */
+        }
+
+        .social-icons {
+            margin-top: 1em;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .social-icons a img {
+            width: 40px;
+            height: 40px;
+            filter: invert(1); /* Making icons white */
+        }
+
+        /* Styling for About section */
+        #about {
+            padding: 2em 1em;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        #about h2 {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 0.5em;
+            text-transform: uppercase;
+        }
+
+        #about hr {
+            width: 50%;
+            border: 1px solid #555;
+            margin: 0.5em auto;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 1em 0;
+        }
+
+        #about p {
+            font-size: 1em;
+            line-height: 1.5em;
+            margin: 1em 0;
+            color: #cccccc;
+        }
+
+        .personal-info {
+            list-style: none;
+            padding: 0;
+            font-size: 1em;
+            margin-top: 1em;
+        }
+
+        .personal-info li {
+            margin: 0.5em 0;
+            color: #00FF00; /* Green color for icons or highlighted text */
+        }
+
+        .personal-info li span {
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        /* Styling for Projects section */
+        #projects {
+            padding: 2em 1em;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        #projects h2 {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 0.5em;
+            text-transform: uppercase;
+        }
+
+        #projects hr {
+            width: 50%;
+            border: 1px solid #555;
+            margin: 0.5em auto;
+        }
+
+        #projects p {
+            font-size: 1em;
+            line-height: 1.5em;
+            margin: 1em 0;
+            color: #cccccc;
+        }
+
+        #projects img {
+            width: 300px; /* Set width for the project image */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px;
+            margin: 1em 0;
+        }
+
+        #projects button {
+            background-color: #00FF00; /* Green background */
+            color: #121212; /* Dark text */
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #projects button:hover {
+            background-color: #00cc00; /* Darker green on hover */
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            #menu ul {
+                display: flex;
+                flex-direction: column;
+                background-color: #1c1c1c;
+                position: fixed;
+                top: 3.5em;
+                left: 0;
+                right: 0;
+                padding: 1em;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <button id="menu-toggle" onclick="toggleMenu()">☰</button>
+        <div id="menu" class="hidden">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li> <!-- Added link to Projects -->
+            </ul>
+        </div>
+    </nav>
+    
+    <main id="home">
+        <h1>RAYY CREATOR</h1>
+        <p>I'm <span id="role" class="highlight">Developer</span></p> <!-- ID added for dynamic change -->
+        <div class="social-icons">
+            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" alt="YouTube"></a>
+            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub"></a>
+            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"></a>
+        </div>
+    </main>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About</h2>
+        <hr>
+        <img src="https://rammpntxxx-up.hf.space/file/image-9aulqkycaxc.jpg" alt="Profile Picture" class="profile-img">
+        <p>
+            Focused and enthusiastic developer with a keen interest in software development and artificial intelligence. By comprehensive exposure to the underlying concepts and applying them vividly to various projects, my love for these domains came into being. I am a passionate individual who thrives to build and apply algorithms to solve real-world industry problems.
+        </p>
+        <ul class="personal-info">
+            <li><span>Birthday:</span> 19 oktober 2008</li>
+            <li><span>Phone:</span> +62 857-1851-7738</li>
+        </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <hr>
+        <img src="https://rammpntxxx-up.hf.space/file/image-pfh309j373r.jpg" alt="Project Image"> <!-- Replace with your image URL -->
+        <p><strong>JASA PEMBUATAN WEBSITE</strong> - A service dedicated to creating professional websites tailored to your needs.</p>
+        <button onclick="window.location.href='https://wa.me/6285718517738'">BUY</button> <!-- Replace with your URL -->
+    </section>
+
+    <script>
+        // JavaScript untuk mengontrol navigasi
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Fungsi untuk mengubah teks role
+        let roles = ["Developer", "Coder", "Rayy"];
+        let index = 0;
+        
+        function changeRole() {
+            const roleElement = document.getElementById('role');
+            roleElement.innerText = roles[index];
+            index = (index + 1) % roles.length; // Mengatur index untuk loop
+        }
+
+        // Ubah teks setiap 2 detik
+        setInterval(changeRole, 2000);
+    </script>
+</body>
+</html>
